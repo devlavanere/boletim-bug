@@ -82,3 +82,25 @@ primeiro acerto.
 - [ ] A média de todos os alunos está igual à esperada
 - [ ] A situação de todos os alunos está igual à esperada
 - [ ] Consigo explicar, com minhas palavras, cada bug que corrigi
+
+## Sobre os bugs resolvidos
+
+### 1. Índice do loop da média
+
+**Problema original:** Na função `calcularMedia()`, o loop `for` iniciava com `i = 1`, pulando a primeira nota de cada aluno ao calcular a soma. Isso resultava em médias incorretas para todos os alunos.
+
+**Correção aplicada:** O índice inicial do loop foi alterado de `i = 1` para `i = 0`, garantindo que todas as notas sejam somadas corretamente antes de dividir pelo total.
+
+### 2. Operador da condição de aprovação
+
+**Problema original:** Na função `situacao()`, a verificação de aprovação utilizava o operador `>` (`media > mediaAprovacao`). Consequentemente, um aluno com média exatamente igual a 7.0 não era aprovado, pois `7.0 > 7.0` é falso.
+
+**Correção aplicada:** O operador foi alterado de `>` para `>=` (`media >= mediaAprovacao`), aprovando corretamente alunos com média igual ou superior a 7.0, conforme as regras da escola.
+
+### 3. Valor da constante de recuperação
+
+**Problema original:** A constante `MEDIA_RECUPERACAO` estava definida como `6.5`, enquanto as regras da escola estabelecem que o limite para recuperação é `5.0`. Isso classificava incorretamente alunos cujas médias estavam entre 5.0 e 6.5.
+
+**Correção aplicada:** O valor da constante foi ajustado de `6.5` para `5.0`, alinhando o código com as regras definidas no README.
+
+Autor: Michel Lavanere Sampaio

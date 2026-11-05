@@ -11,3 +11,4 @@ out/
 
 # Sistema
 .DS_Store
+.aider*
